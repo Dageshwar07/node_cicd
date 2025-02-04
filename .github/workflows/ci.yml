@@ -2,7 +2,7 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "master", "main" ]
 
 jobs:
 
@@ -19,6 +19,6 @@ jobs:
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
       
     - name: Build the Docker image
-      run: docker build -t varsubham/cicd-pipeline .
+      run: docker build -t dageshwar07/node-app .
     - name: Push to Dockerhub
-      run: docker push varsubham/cicd-pipeline:latest
+      run: docker push dageshwar07/node-app:latest
